@@ -1,6 +1,7 @@
 # Trivia Challenge Project Documentation
 
 #### Live Project -> [Trivia Challenge](https://trivia-mocion.apps.aipus.co/)
+#### My Figma Design -> [Figma Desing](https://www.figma.com/file/vJ17sI7ORINFCJFSgpbjPA/Untitled?type=design&node-id=0%3A1&mode=design&t=ACUHQBQ5UCwwqiAL-1)
 
 The Trivia Challenge is a web-based quiz application that presents users with 12 true or false questions. It leverages React, TypeScript, Tailwind CSS, redux toolkit, react-router-dom and Vite for the frontend, with Redux for state management. The backend, although not detailed in this documentation, is hinted to be a Node.js application, as indicated by the presence of an Express server setup in the package.json file.
 
