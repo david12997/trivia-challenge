@@ -39,6 +39,7 @@ const HomePage = ():React.JSX.Element => {
                         background="#00BB67"
                         text="Begin"
                         onClick={() => router('/trivia')}
+                        hover={{shadow: "2xl", width: "310px", height: "65px"}}
                     />
                 </div>
 
