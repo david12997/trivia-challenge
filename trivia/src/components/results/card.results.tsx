@@ -29,6 +29,7 @@ const CardResults = (props:PropsCardResult):React.JSX.Element =>{
                     <p className="text-[18px]">Correct answer : <span className="font-bold">{props.correct_answer.toUpperCase()}</span></p>
             </div>
         </div>
+        
     </>
 }
 
