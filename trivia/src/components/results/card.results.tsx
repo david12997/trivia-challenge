@@ -3,14 +3,16 @@ import { IconCheck, IconWrong } from "../icons"
 export type PropsCardResult = {
     question:string,
     correct_answer:string,
-    user_answer:string
+    user_answer:string,
+    styles?:React.CSSProperties
+    stylesHover?:React.CSSProperties
 }
 
 const CardResults = (props:PropsCardResult):React.JSX.Element =>{
 
     return<>
     
-        <div className="answer border border-white flex w-[300px] md:w-[550px] m-2 md:m-4 rounded-[6px] hover:bg-white hover:text-[#6e6e6e] text-white hover:shadow-xl">
+        <div className="answer border border-white flex w-[300px] md:w-[550px] hover:w-[310px] hover:md:w-[580px] m-2 md:m-4 rounded-[6px] hover:bg-white hover:text-[#6e6e6e] text-white hover:shadow-xl cursor-pointer">
             <div className="icon m-2">
                 {
                     props.correct_answer === props.user_answer 
@@ -20,8 +22,6 @@ const CardResults = (props:PropsCardResult):React.JSX.Element =>{
                     <IconWrong width={"44"} height={"44"}color="blue"/>
                 }
                
-               
-                
             </div>
             <div className="data-answer m-2">
                     <h3 className="text-[18px] font-normal mb-2">{props.question}</h3>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useHoverEffect } from "../hooks/hoverEffet";
 
 export type Button1Props = {
     width: string;
@@ -15,43 +15,29 @@ export type Button1Props = {
 }
 
 
-
 const Button1 = ({ width, height, color, text, background, onClick, hover }: Button1Props):React.JSX.Element => {
 
-    const buttonStyles={
-        width: width,
-        height: height,
-        color: color,
-        background: background,
-       
+   
+    const stylesButton:React.CSSProperties = { width: width, height: height, color: color, background: background }
+    const hoverStylesButton:React.CSSProperties = { 
+
+        width: hover !== undefined ? hover?.width : width, 
+        height: hover !== undefined ? hover?.height : height,
+        boxShadow: hover !== undefined ? hover?.shadow : "none", 
+        color: color, 
+        background: background 
     }
-    const [isHover, setIsHover] = useState<boolean>(false);
-    const [buttonHover, setButtonHover] = useState<any | undefined>(buttonStyles);
 
-    
+    const [elementHover, __ , handleEnter, handleLeave] = useHoverEffect(stylesButton, hoverStylesButton);
 
-    useEffect(()=>{
 
-        if(isHover){
-            setButtonHover({
-                width: hover?.width == undefined ? width : hover?.width,
-                height: hover?.height == undefined ? height : hover?.height,
-                color: color,
-                background: background,
-                boxShadow: hover?.shadow == undefined ? "none" : `0px 0px 10px 5px rgba(0,0,0,0.1)`
-            })
-        }else{
-            setButtonHover(buttonStyles)
-        }
-        
-    },[isHover])
 
     return<>
         <button className={`m-1 rounded-[9px] font-extrabold text-[20px] flex items-center justify-center` }
-            style={buttonHover} 
+            style={elementHover} 
             onClick={onClick} 
-            onMouseEnter={()=>setIsHover(true)}
-            onMouseLeave={()=>setIsHover(false)}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleLeave}
         >
             {text}
         </button>
