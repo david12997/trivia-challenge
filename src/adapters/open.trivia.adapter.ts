@@ -14,7 +14,7 @@ export class OpenTriviaAdapter implements ITriviaAPI {
 
         //console.log(data);
 
-        return data;
+        return data[0];
     }
 );
     return response;
