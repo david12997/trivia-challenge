@@ -26,8 +26,10 @@ const TriviaPage = ():React.JSX.Element => {
         
         questions.length === 0
         &&
-        GetData(['https://opentdb.com/api.php?amount=12&difficulty=hard&type=boolean'])
+        GetData(['https://opentdb.com/api.php?amount=12&difficulty=hard&type=boolean','http://localhost:3009/api/opentdb/questions?amount=12&difficulty=hard&type=boolean'])
         .then((data) => {
+
+            console.log(data);
 
             const dataApi = data as [QuizResponse];
             if(dataApi.length > 0 && dataApi[0].response_code === 0){
