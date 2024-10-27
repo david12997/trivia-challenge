@@ -7,8 +7,8 @@ This project is a full-stack application that serves a trivia quiz game. It is b
 
 ---
 
- Live Project -> [Trivia Challenge](https://trivia-mocion.apps.aipus.co/)
- My Figma Design -> [Figma Desing](https://www.figma.com/file/vJ17sI7ORINFCJFSgpbjPA/Untitled?type=design&node-id=0%3A1&mode=design&t=ACUHQBQ5UCwwqiAL-1)
+ - Live Project -> [Trivia Challenge](https://trivia-mocion.apps.aipus.co/)
+ - My Figma Design -> [Figma Desing](https://www.figma.com/file/vJ17sI7ORINFCJFSgpbjPA/Untitled?type=design&node-id=0%3A1&mode=design&t=ACUHQBQ5UCwwqiAL-1)
 
 ---
 
@@ -106,7 +106,7 @@ The application uses Redux Toolkit for state management. All the settings are in
 Example: [`trivia.game.ts`](trivia/src/store/trivia.game.ts)
 
 
-------
+---
 
 ## <img  src="https://raw.githubusercontent.com/alDuncanson/react-hooks-snippets/master/icon.png" width="26px" height="26px" > Hooks
 ###### Hooks
@@ -114,6 +114,8 @@ Example: [`trivia.game.ts`](trivia/src/store/trivia.game.ts)
 The project uses React hooks for managing component state and side effects.
 
 Example: [`useNavigate`](trivia/src/pages/home.tsx)
+
+---
 
 ## <img  src="https://cdn-icons-png.flaticon.com/512/8964/8964273.png" width="30px" height="30px" >  Setup and Installation
 ###### Setup and installation
