@@ -9,7 +9,6 @@ export const GetData = async(urls:string[]) =>{
             
             promises[index] = fetch(url,{
                 method:'GET',
-               redirect: 'follow'
                 
             
             })           
@@ -17,7 +16,11 @@ export const GetData = async(urls:string[]) =>{
         });
 
         const response = await Promise.all(promises);
-        return await Promise.all(response.map(res=>res.json()))
+        return await Promise.all(response.map(res=>{
+
+         
+            return res.json();
+        }))
     
         
     

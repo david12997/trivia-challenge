@@ -1,8 +1,8 @@
 
 import { setTriviaGame } from "../store/trivia.game";
-import { QuizResult } from "../types/types.game";
+import { CommonTriviaQuestion } from "../types/types.game";
 
-const saveQuestionsGame = (data:QuizResult[],dispatch:any)=>{
+const saveQuestionsGame = (data:CommonTriviaQuestion[],dispatch:any)=>{
 
     if(data.length > 0){
         dispatch(setTriviaGame(data));

@@ -1,3 +1,3 @@
 export interface ITriviaAPI {
-    fetchQuestions(amount: number, difficulty: string, type: string): Promise<any>;
+    fetchQuestions(amount: number | undefined, difficulty: string | undefined, type: string | undefined): Promise<any>;
   }

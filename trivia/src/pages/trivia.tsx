@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button1 from "../components/button";
 import SectionBg from "../components/section.bg";
 import { GetData } from "../utils/get.data";
-import { QuizResponse, QuizResult, userResponse } from "../types/types.game";
+import { CommonTriviaQuestion, userResponse } from "../types/types.game";
 import Question from "../components/trivia/question";
 import CircleQuestion from "../components/trivia/circle.question";
 import PaginationQuestion from "../components/trivia/pagination.question";
@@ -17,7 +17,7 @@ import Spinner from "../components/spinner";
 const TriviaPage = ():React.JSX.Element => {
 
     const dispatch = useAppDispatch();
-    const [questions, setQuestions] = useState< QuizResult[] | any[]>([]);
+    const [questions, setQuestions] = useState<CommonTriviaQuestion[]>([]);
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
     const [answersUser, setAnswersUser] = useState<userResponse[]>([]);
     const router = useNavigate();
@@ -26,15 +26,18 @@ const TriviaPage = ():React.JSX.Element => {
         
         questions.length === 0
         &&
-        GetData(['http://localhost:3009/api/opentdb/questions?amount=12&difficulty=hard&type=boolean'])
+        GetData([
+            'http://localhost:3009/api/the-trivia-api/questions?amount=6&difficulty=hard&type=boolean',
+        
+            
+        ])
         .then((data) => {
 
-            console.log(data);
 
-            const dataApi = data as [QuizResponse];
-            if(dataApi.length > 0 && dataApi[0].response_code === 0){
-                setQuestions(dataApi[0].results);
-                saveQuestionsGame(dataApi[0].results,dispatch);
+            const dataApi = [ ...data[0] ] as CommonTriviaQuestion[];
+            if(dataApi.length > 0  ){
+                setQuestions(dataApi);
+                saveQuestionsGame(dataApi,dispatch);
             }
             
         })
@@ -42,8 +45,8 @@ const TriviaPage = ():React.JSX.Element => {
 
         // if the user has answered all the questions
         //the answers are saved in the store and the user is redirected to the results page
-        if (answersUser.length === 12) {
-            addAnswer(answersUser, dispatch);
+        if (answersUser.length === 6) {
+            addAnswer(6,answersUser, dispatch);
             router('/trivia/results');
         }
 
@@ -61,7 +64,7 @@ const TriviaPage = ():React.JSX.Element => {
 
         setAnswersUser(newUserResponses);
 
-        if (currentQuestion < 11) {
+        if (currentQuestion < 5) {
             setCurrentQuestion(currentQuestion + 1);
         }
     };

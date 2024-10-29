@@ -23,10 +23,8 @@ This project is a full-stack application that serves a trivia quiz game. It is b
 - [State Management](#state-management)
 - [Hooks](#hooks)
 - [Setup and Installation](#setup-and-installation)
-- [Running the Project](#running-the-project)
-- [API Endpoints](#api-endpoints)
-- [Error Handling](#error-handling)
-- [CORS Configuration](#cors-configuration)
+- [Routes and API Endpoints](#api-endpoints)
+
 
 
 ---
@@ -125,7 +123,7 @@ Example: [`useNavigate`](trivia/src/pages/home.tsx)
 ## <img  src="https://cdn-icons-png.flaticon.com/512/8964/8964273.png" width="30px" height="30px" >  Setup and Installation
 ###### Setup and installation
 
-To deploy this project you can use docker or al least you  need node js installed in your pc 
+To deploy this project you can use docker or node js
 
  ###  <img  src="https://cdn3d.iconscout.com/3d/free/thumb/free-nodejs-3d-icon-download-in-png-blend-fbx-gltf-file-formats--javascript-runtime-backend-node-js-logo-coding-lang-pack-logos-icons-7578002.png?f=webp" width="30px" height="30px" >Using Node
 
@@ -179,32 +177,11 @@ To deploy this project you can use docker or al least you  need node js installe
 
 3. Go to [http://localhost:3009/](http://localhost:3009/)
 
+------
+<br/>
 
 
 
 
-# Code Format
 
-The project adheres to standard TypeScript and React coding conventions, utilizing functional components and hooks.
 
-# State Management
-To handle data state in the application I am using Redux toolkit, all the settings are in the store folder.
-
-# Routing
-I am using React Router dom to handle the routes and client navigation, I am also using Express to serve the application on the backend routes.
-
-the routes available are:
-
-1. Init Point
-```bash
-  /
-```
-2. trivia game
-```bash
-  /trivia
-```
-
-3. results trivia game
-```bash
-  /trivia/results
-```

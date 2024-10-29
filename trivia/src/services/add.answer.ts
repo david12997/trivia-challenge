@@ -2,9 +2,9 @@ import { setResponse } from "../store/trivia.game"
 import { userResponse } from "../types/types.game"
 
 
-const addAnswer = (answersUser:userResponse[],dispatch:any)=>{
+const addAnswer = (expectedLength:number,answersUser:userResponse[],dispatch:any)=>{
 
-    if(answersUser.length === 12) {
+    if(answersUser.length === expectedLength) {
         dispatch(setResponse(answersUser))
     }
    

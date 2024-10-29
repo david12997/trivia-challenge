@@ -3,12 +3,15 @@ import { TriviaAPIFactory } from './../factories/trivia.factory';
 
 const router = express.Router();
 
-router.get('/opentdb/questions', async (req, res, next) => {
+// Dynamic route to handle multiple trivia APIs
+router.get('/:apiTrivia/questions', async (req, res, next) => {
+
+    const {apiTrivia} = req.params;
     const { amount, difficulty, type } = req.query;
 
     try {
       
-        const triviaAPI = TriviaAPIFactory.create('opentdb');
+        const triviaAPI = TriviaAPIFactory.create(apiTrivia);
         const questions = await triviaAPI.fetchQuestions(Number(amount), difficulty as string, type as string);
   
         res.json(questions);
